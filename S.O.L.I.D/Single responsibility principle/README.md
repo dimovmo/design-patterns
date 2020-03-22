@@ -1,4 +1,4 @@
-# Single responsibility principle (SRP)
+# The single responsibility principle (SRP)
 
 ## Definition
 A module should have only one reason to change (by module we mean class or method, function).
@@ -9,15 +9,15 @@ The key thing of SRP is decomposition for decreasing complexity and relations. S
 Use this principle when
 - You need flexible and easy to change (or delete) code.
 - Hard to say where is vector for changes.
-- You need reduce number of relationships between elements in system.
+- You need reduce the number of relationships between elements in system.
 
 Don't use SRP if
 - You're sure your 'mixed job' class never going to be changed.
 - Following SRP will substantially increase development and code support time.
 
-Wrong implementation of SRP follows to many small classes with unclear responsibility.
+Wrong implementation of SRP follows for many small classes with unclear responsibility.
 
-SRP requires balance between amount of new classes and SRP. For example, popular in frameworks pattern ActiveRecord violates SRP. ActiveRecord class combines a lot of different functionality, business logic and data layer. But often ActiveRecord is useful and appropriate. So, practice shows us that SRP is not a dogma and could be violated.
+SRP requires balance between the amount of new classes and SRP. For example, popular in frameworks pattern ActiveRecord violates SRP. ActiveRecord class combines a lot of different functionality, business logic and data layer. But often ActiveRecord is useful and appropriate. So, practice shows us that SRP is not a dogma and could be violated.
 
 ```typescript
 // BAD
@@ -29,13 +29,13 @@ class AuthService {
 
     return false
   }
-  readJWTFromCookie(): srting | null {}
+  readJWTFromCookie(): string | null {}
   saveJWTInCookie(token: string): void {}
 }
 
 // GOOD
 class CookieService {
-  get(name: string): srting | null {}
+  get(name: string): string | null {}
   set(name: string, value: string): void {}
 }
 ```
