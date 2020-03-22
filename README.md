@@ -1,2 +1,2 @@
 # patterns
-JavaScript and TypeScript programming patterns examples
+JavaScript and TypeScript programming patterns examples.
